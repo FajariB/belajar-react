@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react-dasar</title>
+
+    <!-- ini nambahin react dan reactDOM pake CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+
+        function H1(props) {
+            return(<h1> Belajar React Dasar {props.name} </h1>); //ini pake props biasa
+        }
+
+        function H2({author}) {
+            return(<h1> Belajar React Dasar {author ? author : 'bagas'} </h1>); //ini pake props refactor, desctructuring, ternary operator
+        }
+
+        function HomePage() {
+            return(
+                <div> 
+                    <H1 name="fajari" />
+                    <H2 />
+                    <H2 author='imami'/>
+                </div>
+            );
+        }
+
+        root.render(<HomePage />);
+    </script>
+</body>
+</html>
